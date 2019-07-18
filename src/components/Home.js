@@ -35,7 +35,7 @@ export default class Home extends Component {
 
   editUserHandler = (editedUser) => {
     const usersCopy = [...this.state.users];
-    console.log('BEFORE SILTER',usersCopy, editedUser)
+    console.log('BEFORE FILTER',usersCopy, editedUser)
 
     const haha = usersCopy.filter = (user,index) => {
       // const {_id} = user;
