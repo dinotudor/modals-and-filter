@@ -35,22 +35,15 @@ export default class Home extends Component {
 
   editUserHandler = (editedUser) => {
     const usersCopy = [...this.state.users];
-    console.log('BEFORE FILTER',usersCopy, editedUser)
-
-    const haha = usersCopy.filter = (user,index) => {
-      // const {_id} = user;
-      console.log(user);
-
-      if(editedUser.name !== user.name) {
-
-        console.log('HELLO',editedUser._id, user._id);
-      }
-    };
-    console.log(haha);
-
-    // this.setState({ users: usersCopy })
+    console.log('BEFORE FILTER',usersCopy, 'EDITED USER',editedUser)
+    let newId = editedUser._id
+    console.log('NEW ID',newId)
+    let index = usersCopy.findIndex(item => item._id === newId)
+    console.log('INDEX', index)
+    usersCopy.splice(index, 1, editedUser)
+    console.log('AFTER splce',usersCopy)
+    this.setState({ users: usersCopy })
   }
-
 
   addUserHandler = (newUser) => {
     const usersCopy = [...this.state.users];

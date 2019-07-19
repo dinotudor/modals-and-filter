@@ -28,11 +28,10 @@ class EditUser extends Component {
 
   handleChange = (event) => {
     event.preventDefault();
-    console.log(event.target.name)
-    // All our inputs have same `name` as the `state` property name.
+    //console.log(event.target.name)
     let { name, value } = event.target;
     this.setState( { [name]: value } );
-    console.log(this.state)
+    //console.log(this.state)
 
   }
   render(){
