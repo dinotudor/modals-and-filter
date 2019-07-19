@@ -25,28 +25,28 @@ export default class Home extends Component {
   }
 
   handleOpen(oneUser) {
-    this.setState({ open: true });
+    this.setState({ open: true })
     this.setState({ temporalUser: oneUser })
-  };
+  }
 
   handleClose(){
     this.setState({ open: false });
-  };
+  }
 
   editUserHandler = (editedUser) => {
-    const usersCopy = [...this.state.users];
-    console.log('BEFORE FILTER',usersCopy, 'EDITED USER',editedUser)
-    let newId = editedUser._id
-    console.log('NEW ID',newId)
-    let index = usersCopy.findIndex(item => item._id === newId)
-    console.log('INDEX', index)
+    const usersCopy = [...this.state.users]
+    const newId = editedUser._id
+    const index = usersCopy.findIndex(item => item._id === newId)
+    if (editedUser.name !==  this.state.users.name || editedUser.email !== this.state.users.email || editedUser.phone !== this.state.users.phone) {
     usersCopy.splice(index, 1, editedUser)
-    console.log('AFTER splce',usersCopy)
     this.setState({ users: usersCopy })
+    } else {
+      this.handleClose()
+    }
   }
 
   addUserHandler = (newUser) => {
-    const usersCopy = [...this.state.users];
+    const usersCopy = [...this.state.users]
     usersCopy.push(newUser);
 
     this.setState({ users: usersCopy })

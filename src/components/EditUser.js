@@ -18,6 +18,17 @@ class EditUser extends Component {
     this.setState({ _id, picture, name, email, phone, role });
   }
 
+  closeModal = () => {
+    const { _id, picture, name, email, phone, role} = this.props.userToEdit;
+    this.setState({  _id, picture, name, email, phone, role })
+    this.props.closeModal();
+ }
+
+ resetForm = (event) => {
+  event.preventDefault();
+  this.setState({  _id:'', picture:'', name:'', email:'', phone:'', role:'' })
+}
+
   handleFormSubmit = (event) => {
     event.preventDefault();
     let { name, value } = event.target;
@@ -28,10 +39,8 @@ class EditUser extends Component {
 
   handleChange = (event) => {
     event.preventDefault();
-    //console.log(event.target.name)
     let { name, value } = event.target;
     this.setState( { [name]: value } );
-    //console.log(this.state)
 
   }
   render(){
@@ -39,16 +48,23 @@ class EditUser extends Component {
 
     return (
       <div>
+        <div>
+        <button onClick={this.closeModal}>CLOSE MODAL</button>
+        <button onClick={this.resetForm}>RESET FORM</button>
+      </div>
       <form onSubmit={this.handleFormSubmit}>
-      <label>Name</label>
-      <input type="text" name="name" placeholder={this.state.name} onChange={this.handleChange} value={this.state.name} required />
-
-      <label>Email</label>
-      <input type="email" name="email" placeholder={this.state.email} onChange={this.handleChange} value={this.state.email} required />
-
-      <label>Phone</label>
-      <input type="text" name="phone" placeholder={this.state.phone} onChange={this.handleChange} value={this.state.phone}  />
-
+      <div>
+        <label>Name</label>
+        <input type="text" name="name" placeholder={this.state.name} onChange={this.handleChange} value={this.state.name} required />
+      </div>
+      <div>
+        <label>Email</label>
+        <input type="email" name="email" placeholder={this.state.email} onChange={this.handleChange} value={this.state.email} required />
+      </div>
+      <div>
+        <label>Phone</label>
+        <input type="text" name="phone" placeholder={this.state.phone} onChange={this.handleChange} value={this.state.phone}  />
+      </div>
       <button type="submit" >SUBMIT</button>
 
       </form>
