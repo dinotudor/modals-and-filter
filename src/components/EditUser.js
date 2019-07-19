@@ -26,7 +26,7 @@ class EditUser extends Component {
 
  resetForm = (event) => {
   event.preventDefault();
-  this.setState({  _id:'', picture:'', name:'', email:'', phone:'', role:'' })
+  this.setState({  _id:'', name:'', email:'', phone:''})
 }
 
   handleFormSubmit = (event) => {

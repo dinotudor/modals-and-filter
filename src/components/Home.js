@@ -95,7 +95,6 @@ export default class Home extends Component {
                         <td><button onClick={(e) => {this.handleOpen(oneUser)}}>Edit user</button></td>
                       </tr>
                   </tbody>
-
             })}
       </table>
       <Modal style={style} open={this.state.open}>
