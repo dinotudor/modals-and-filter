@@ -33,6 +33,10 @@ export default class Home extends Component {
     this.setState({ open: false });
   }
 
+  updateSearch(event){
+    this.setState({search: event.target.value})
+  }
+
   editUserHandler = (editedUser) => {
     const usersCopy = [...this.state.users]
     const newId = editedUser._id
@@ -52,9 +56,6 @@ export default class Home extends Component {
     this.setState({ users: usersCopy })
   }
 
-  updateSearch(event){
-    this.setState({search: event.target.value})
-  }
 
   render() {
     let filteredUsers = this.state.users.filter(

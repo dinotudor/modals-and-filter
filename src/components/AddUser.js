@@ -18,16 +18,12 @@ class AddUser extends Component {
   handleFormSubmit = (event) => {
     event.preventDefault();
     this.props.addUser(this.state);
-    // Reset the state
     this.setState({ name: '', email: '', phone: '' });
   };
 
   handleChange(event) {
     event.preventDefault();
-    console.log(event.target.value)
-    // All our inputs have same `name` as the `state` property name.
     let { name, value } = event.target;
-
     this.setState( { [name]: value } );
   }
   render(){
