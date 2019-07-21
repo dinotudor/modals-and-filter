@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import usersData from './../assets/users.json'
 import EditUser from './EditUser'
 import AddUser from './AddUser'
-import Modal from '@material-ui/core/Modal';
+import Modal from '@material-ui/core/Modal'
+//TEST
+import Add2 from './Add2'
 
 const style = {
   background: 'pink',
@@ -68,6 +70,7 @@ export default class Home extends Component {
     return(
       <div>
         <AddUser addUser={this.addUserHandler}/>
+        <Add2 addUser={this.addUserHandler} closeModal={this.handleClose} to="/Add2">Add2</Add2>
         <label>Search</label>
             <input
               className="input"

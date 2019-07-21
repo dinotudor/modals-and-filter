@@ -4,8 +4,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 //import Add from './components/Add'
-import Edit from './components/Edit'
 import AddUser from './components/AddUser'
+import Add2 from './components/Add2'
 //import usersData from './assets/users.json'
 
 
@@ -16,7 +16,7 @@ function App() {
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/AddUser" component={AddUser} />
-        <Route path="/edit" component={Edit} />
+        <Route path="/Add2" component={Add2} />
       </Switch>
     </BrowserRouter>
   );
