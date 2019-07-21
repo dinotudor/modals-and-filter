@@ -12,7 +12,7 @@ class Add2 extends Component {
       email: '',
       phone: '',
       role: 'user',
-      open: true,
+      open: false,
     }
 }
 

@@ -3,8 +3,6 @@ import usersData from './../assets/users.json'
 import EditUser from './EditUser'
 import AddUser from './AddUser'
 import Modal from '@material-ui/core/Modal'
-//TEST
-import Add2 from './Add2'
 
 const style = {
   background: 'pink',
@@ -53,31 +51,29 @@ export default class Home extends Component {
 
   addUserHandler = (newUser) => {
     const usersCopy = [...this.state.users]
-    usersCopy.push(newUser);
+    usersCopy.push(newUser)
 
     this.setState({ users: usersCopy })
   }
-
 
   render() {
     let filteredUsers = this.state.users.filter(
       (users) => {
         return users.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !==-1 ||
         users.email.toLowerCase().indexOf(this.state.search.toLowerCase()) !==-1 ||
-        users.role.toLowerCase().indexOf(this.state.search.toLowerCase()) !==-1;
+        users.role.toLowerCase().indexOf(this.state.search.toLowerCase()) !==-1
       }
     )
     return(
       <div>
         <AddUser addUser={this.addUserHandler}/>
-        <Add2 addUser={this.addUserHandler} closeModal={this.handleClose} to="/Add2">Add2</Add2>
         <label>Search</label>
-            <input
-              className="input"
-              type="text"
-              placeholder="Search by name, email, role ..."
-              value={this.state.search}
-              onChange={this.updateSearch.bind(this)}
+          <input
+            className="input"
+            type="text"
+            placeholder="Search by name, email, role ..."
+            value={this.state.search}
+            onChange={this.updateSearch.bind(this)}
           />
         <table className="highlight">
           <thead>

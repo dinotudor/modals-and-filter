@@ -18,18 +18,18 @@ class AddUser extends Component {
   handleFormSubmit = (event) => {
     event.preventDefault();
     this.props.addUser(this.state);
-    this.setState({ name: '', email: '', phone: '' });
-  };
+    this.setState({ name: '', email: '', phone: '' })
+  }
 
   handleChange(event) {
-    event.preventDefault();
-    let { name, value } = event.target;
-    this.setState( { [name]: value } );
+    event.preventDefault()
+    let { name, value } = event.target
+    this.setState( { [name]: value } )
   }
   render(){
 
   return (
-    <div>
+    <div className="add-user">
       <form onSubmit={this.handleFormSubmit}>
       <label>Name</label>
       <input type="text" name="name" placeholder="Name" onChange={(e) => this.handleChange(e)} value={this.state.name} required />
@@ -48,4 +48,4 @@ class AddUser extends Component {
 }
 }
 
-export default AddUser;
+export default AddUser

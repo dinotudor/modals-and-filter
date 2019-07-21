@@ -1,12 +1,12 @@
-import React from 'react';
-import './App.css';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import React from 'react'
+import './App.css'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 //import Add from './components/Add'
 import AddUser from './components/AddUser'
 import Add2 from './components/Add2'
-//import usersData from './assets/users.json'
+
 
 
 function App() {
@@ -22,4 +22,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
