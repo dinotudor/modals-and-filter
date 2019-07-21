@@ -26,7 +26,7 @@ class EditUser extends Component {
 
  resetForm = (event) => {
   event.preventDefault();
-  this.setState({  _id:'', name:'', email:'', phone:''})
+  this.setState({  name:'', email:'', phone:''})
 }
 
   handleFormSubmit = (event) => {
@@ -48,25 +48,22 @@ class EditUser extends Component {
 
     return (
       <div>
-        <div>
-        <button onClick={this.closeModal}>CLOSE MODAL</button>
-        <button onClick={this.resetForm}>RESET FORM</button>
-      </div>
+        <button onClick={this.closeModal}>X CLOSE MODAL</button>
       <form onSubmit={this.handleFormSubmit}>
-      <div>
-        <label>Name</label>
-        <input type="text" name="name" placeholder={this.state.name} onChange={this.handleChange} value={this.state.name} required />
-      </div>
-      <div>
-        <label>Email</label>
-        <input type="email" name="email" placeholder={this.state.email} onChange={this.handleChange} value={this.state.email} required />
-      </div>
-      <div>
-        <label>Phone</label>
-        <input type="text" name="phone" placeholder={this.state.phone} onChange={this.handleChange} value={this.state.phone}  />
-      </div>
-      <button type="submit" >SUBMIT</button>
-
+        <div>
+          <label>Name</label>
+          <input type="text" name="name" placeholder={this.state.name} onChange={this.handleChange} value={this.state.name} required />
+        </div>
+        <div>
+          <label>Email</label>
+          <input type="email" name="email" placeholder={this.state.email} onChange={this.handleChange} value={this.state.email} required />
+        </div>
+        <div>
+          <label>Phone</label>
+          <input type="text" name="phone" placeholder={this.state.phone} onChange={this.handleChange} value={this.state.phone}  />
+        </div>
+        <button onClick={this.resetForm}>RESET FORM</button>
+        <button type="submit" >SUBMIT</button>
       </form>
     </div>
   )
