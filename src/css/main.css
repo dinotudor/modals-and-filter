@@ -5,6 +5,24 @@ h2, p {
   padding: 10px;
   color: #fff; }
 
+.search {
+  padding: 20px;
+  color: #fff; }
+
+.search-input {
+  width: 30%; }
+
+table {
+  padding: 20px; }
+
+.btn-blue {
+  border-radius: 10px;
+  padding: 10px;
+  background: blue;
+  color: #fff;
+  border: none;
+  margin: 10px; }
+
 h3 {
   padding: 10px; }
 

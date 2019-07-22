@@ -44,8 +44,8 @@ class AddUser extends Component {
         <input type="email" name="email" placeholder="email" onChange={(e) => this.handleChange(e)} value={this.state.email} required />
         <label>Phone</label>
         <input type="text" name="phone" placeholder="phone" onChange={(e) => this.handleChange(e)} value={this.state.phone}  />
-        <button type="submit" >Add +</button>
-        <button onClick={this.resetForm} >Clear</button>
+        <button className="btn-blue" type="submit" >Add +</button>
+        <button className="btn-blue" onClick={this.resetForm} >Clear</button>
       </form>
     </section>
     </Paper>

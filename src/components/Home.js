@@ -3,6 +3,7 @@ import usersData from './../assets/users.json'
 import EditUser from './EditUser'
 import AddUser from './AddUser'
 import Modal from '@material-ui/core/Modal'
+import Paper from '@material-ui/core/Paper';
 
 const style = {
   background: 'white',
@@ -69,15 +70,16 @@ export default class Home extends Component {
       <div>
         <AddUser addUser={this.addUserHandler}/>
         <section>
-          <label>Search</label>
+          <label className="search">Search</label>
             <input
-              className="input"
+              className="search-input"
               type="text"
               placeholder="Search by name, email, role ..."
               value={this.state.search}
               onChange={this.updateSearch.bind(this)}
             />
         </section>
+        <Paper>
         <table className="highlight">
           <thead>
               <tr>
@@ -95,11 +97,12 @@ export default class Home extends Component {
                         <td> {oneUser.name} </td>
                         <td> {oneUser.email} </td>
                         <td> {oneUser.role} </td>
-                        <td><button onClick={(e) => {this.handleOpen(oneUser)}}>Edit user</button></td>
+                        <td><button onClick={(e) => {this.handleOpen(oneUser)}}><i class="material-icons">edit</i></button></td>
                       </tr>
                   </tbody>
             })}
       </table>
+      </Paper>
       <Modal style={style} open={this.state.open}>
         <EditUser userToEdit={this.state.temporalUser} editUser={this.editUserHandler} closeModal={this.handleClose}/>
       </Modal>
