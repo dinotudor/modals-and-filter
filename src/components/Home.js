@@ -6,11 +6,11 @@ import Modal from '@material-ui/core/Modal'
 import Paper from '@material-ui/core/Paper';
 
 const style = {
-  background: 'white',
+  background: '#000',
   margin: '40px',
-  padding: '40px',
+  padding: '40px, 20px',
   color: 'white',
-  heigth: '250px',
+  height: '80px',
 
 };
 

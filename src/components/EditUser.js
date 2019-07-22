@@ -44,12 +44,10 @@ class EditUser extends Component {
 
   }
   render(){
-
-
     return (
       <section className="add-parent">
-        <button className="btn-blue" onClick={this.closeModal}><i class="material-icons">close</i></button>
-        <button className="btn-blue" onClick={this.resetForm}>Reset fields</button>
+      <h3>Edit User:</h3>
+        <button className="btn-blue" onClick={this.resetForm}>Clear</button>
         <form className="add-parent"onSubmit={this.handleFormSubmit}>
           <div>
             <label>Name</label>
@@ -64,6 +62,7 @@ class EditUser extends Component {
             <input type="text" name="phone" placeholder={this.state.phone} onChange={this.handleChange} value={this.state.phone}  />
           </div>
           <button className="btn-blue" type="submit" >Confirm</button>
+          <button className="btn-blue" onClick={this.closeModal}><i class="material-icons">close</i></button>
         </form>
     </section>
   )
