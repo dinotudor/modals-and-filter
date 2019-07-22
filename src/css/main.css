@@ -1,6 +1,7 @@
 body {
-  background: red; }
+  background: #a3d2bb; }
 
 .add-user {
   border: 1px solid #000;
-  background: #000; }
+  background: #000;
+  width: 50%; }

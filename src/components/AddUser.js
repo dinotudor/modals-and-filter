@@ -29,21 +29,23 @@ class AddUser extends Component {
   render(){
 
   return (
-    <div className="add-user">
+    <section className="add-user">
       <form onSubmit={this.handleFormSubmit}>
-      <label>Name</label>
-      <input type="text" name="name" placeholder="Name" onChange={(e) => this.handleChange(e)} value={this.state.name} required />
-
-      <label>Email</label>
-      <input type="email" name="email" placeholder="email" onChange={(e) => this.handleChange(e)} value={this.state.email} required />
-
-      <label>Phone</label>
-      <input type="text" name="phone" placeholder="phone" onChange={(e) => this.handleChange(e)} value={this.state.phone}  />
-
-      <button type="submit" >SUBMIT</button>
-
+        <div>
+          <label>Name</label>
+          <input type="text" name="name" placeholder="Name" onChange={(e) => this.handleChange(e)} value={this.state.name} required />
+        </div>
+        <div>
+          <label>Email</label>
+          <input type="email" name="email" placeholder="email" onChange={(e) => this.handleChange(e)} value={this.state.email} required />
+        </div>
+        <div>
+          <label>Phone</label>
+          <input type="text" name="phone" placeholder="phone" onChange={(e) => this.handleChange(e)} value={this.state.phone}  />
+        </div>
+        <button type="submit" >SUBMIT</button>
       </form>
-    </div>
+    </section>
   )
 }
 }
