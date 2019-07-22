@@ -12,6 +12,10 @@ Users Fields:
 - Phone *optional*
 - Role *default value = "User"*
 
+*Edit Users*
+
+Modal that opens in z index 99 with opacity. Possible to clear fields, Close modal and confirm changes. Updates the array of users. No CRUD operations
+
 Basic operations: Display all users in a list, Add new user, Edit user (opening a Modal)
 
 ### Available Scripts
@@ -19,7 +23,7 @@ Basic operations: Display all users in a list, Add new user, Edit user (opening 
 In the project directory, you can run:
 
 #### `npm start`
-### `npm run scss`
+#### `npm run scss`
 #### `npm test`
 #### `npm run build`
 #### `npm run eject`
