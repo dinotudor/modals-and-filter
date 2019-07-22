@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import Paper from '@material-ui/core/Paper'
 
+
 class AddUser extends Component {
   constructor(props){
     super(props);
@@ -32,11 +33,10 @@ class AddUser extends Component {
     this.setState( { [name]: value } )
   }
   render(){
-
-  return (
+    return (
     <Paper>
-    <section>
-      <h3>Add user</h3>
+    <h3>Add new user:</h3>
+    <section className="add-parent">
       <form className="add-user" onSubmit={this.handleFormSubmit}>
         <label>Name</label>
         <input type="text" name="name" placeholder="Name" onChange={(e) => this.handleChange(e)} value={this.state.name} required />

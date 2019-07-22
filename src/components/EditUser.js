@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
 
 class EditUser extends Component {
   constructor(props){
@@ -10,7 +10,7 @@ class EditUser extends Component {
       email: props.userToEdit.email,
       phone: props.userToEdit.phone,
       role: props.userToEdit.role,
-    }
+    };
   }
 
   componentDidMount() {
@@ -47,7 +47,7 @@ class EditUser extends Component {
 
 
     return (
-      <div className="edit-user">
+      <section className="edit-user">
         <button className="btn-blue" onClick={this.closeModal}><i class="material-icons">close</i></button>
         <form onSubmit={this.handleFormSubmit}>
           <div>
@@ -65,7 +65,7 @@ class EditUser extends Component {
           <button className="btn-blue" onClick={this.resetForm}>RESET FORM</button>
           <button className="btn-blue" type="submit" >SUBMIT</button>
         </form>
-    </div>
+    </section>
   )
 }
 }

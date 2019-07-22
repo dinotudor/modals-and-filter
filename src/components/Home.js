@@ -67,10 +67,10 @@ export default class Home extends Component {
       }
     )
     return(
-      <div>
+      <section>
         <AddUser addUser={this.addUserHandler}/>
-        <section>
-          <label className="search">Search</label>
+        <article className="add-parent">
+          <label className="search"><i className="material-icons">search</i></label>
             <input
               className="search-input"
               type="text"
@@ -78,35 +78,37 @@ export default class Home extends Component {
               value={this.state.search}
               onChange={this.updateSearch.bind(this)}
             />
-        </section>
+        </article>
         <Paper>
-        <table className="highlight">
-          <thead>
-              <tr>
-                <th>Picture</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Role</th>
-                <th>Edit</th>
-              </tr>
-          </thead>
-          {filteredUsers.map((oneUser, index)=>{
-            return <tbody key={oneUser._id}>
-                      <tr>
-                        <td><img src={oneUser.picture} alt={'avatar'}/></td>
-                        <td> {oneUser.name} </td>
-                        <td> {oneUser.email} </td>
-                        <td> {oneUser.role} </td>
-                        <td><button onClick={(e) => {this.handleOpen(oneUser)}}><i class="material-icons">edit</i></button></td>
-                      </tr>
-                  </tbody>
-            })}
-      </table>
+        <article className="add-parent">
+          <table className="highlight">
+            <thead>
+                <tr>
+                  <th>Picture</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Role</th>
+                  <th>Edit</th>
+                </tr>
+            </thead>
+            {filteredUsers.map((oneUser, index)=>{
+              return <tbody key={oneUser._id}>
+                        <tr>
+                          <td><img src={oneUser.picture} alt={'avatar'}/></td>
+                          <td> {oneUser.name} </td>
+                          <td> {oneUser.email} </td>
+                          <td> {oneUser.role} </td>
+                          <td><button onClick={(e) => {this.handleOpen(oneUser)}}><i className="material-icons">edit</i></button></td>
+                        </tr>
+                    </tbody>
+              })}
+        </table>
+      </article>
       </Paper>
       <Modal style={style} open={this.state.open}>
         <EditUser userToEdit={this.state.temporalUser} editUser={this.editUserHandler} closeModal={this.handleClose}/>
       </Modal>
-      </div>
+      </section>
     )
   }
 }

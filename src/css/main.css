@@ -29,9 +29,16 @@ h3 {
 .add-user {
   font-size: 1rem;
   padding: 0 20px;
-  margin: 15px 20px; }
+  margin: 0 20px 20px 20px;
+  justify-content: space-between; }
 
 input {
   padding: 5px;
   border-radius: 5px;
-  margin: 0 10px 20px; }
+  margin: 0 10px 0; }
+
+.add-parent {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
