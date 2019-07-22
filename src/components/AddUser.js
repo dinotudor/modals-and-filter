@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import Paper from '@material-ui/core/Paper';
 
 class AddUser extends Component {
   constructor(props){
@@ -14,6 +15,10 @@ class AddUser extends Component {
     }
 }
 
+  resetForm = (event) => {
+    event.preventDefault();
+    this.setState({  name:'', email:'', phone:''})
+  }
 
   handleFormSubmit = (event) => {
     event.preventDefault();
@@ -29,23 +34,21 @@ class AddUser extends Component {
   render(){
 
   return (
-    <section className="add-user">
-      <form onSubmit={this.handleFormSubmit}>
-        <div>
-          <label>Name</label>
-          <input type="text" name="name" placeholder="Name" onChange={(e) => this.handleChange(e)} value={this.state.name} required />
-        </div>
-        <div>
-          <label>Email</label>
-          <input type="email" name="email" placeholder="email" onChange={(e) => this.handleChange(e)} value={this.state.email} required />
-        </div>
-        <div>
-          <label>Phone</label>
-          <input type="text" name="phone" placeholder="phone" onChange={(e) => this.handleChange(e)} value={this.state.phone}  />
-        </div>
-        <button type="submit" >SUBMIT</button>
+    <Paper>
+    <section>
+      <h3>Add user</h3>
+      <form className="add-user" onSubmit={this.handleFormSubmit}>
+        <label>Name</label>
+        <input type="text" name="name" placeholder="Name" onChange={(e) => this.handleChange(e)} value={this.state.name} required />
+        <label>Email</label>
+        <input type="email" name="email" placeholder="email" onChange={(e) => this.handleChange(e)} value={this.state.email} required />
+        <label>Phone</label>
+        <input type="text" name="phone" placeholder="phone" onChange={(e) => this.handleChange(e)} value={this.state.phone}  />
+        <button type="submit" >Add +</button>
+        <button onClick={this.resetForm} >Clear</button>
       </form>
     </section>
+    </Paper>
   )
 }
 }

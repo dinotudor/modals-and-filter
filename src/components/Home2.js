@@ -4,6 +4,16 @@ import EditUser from './EditUser'
 import AddUser from './AddUser'
 import Modal from '@material-ui/core/Modal'
 
+// TESTS
+
+import Table from '@material-ui/core/Table';
+import { makeStyles } from '@material-ui/core/styles';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+
 const style = {
   background: 'pink',
   margin: '40px',
@@ -13,15 +23,15 @@ const style = {
 export default class Home extends Component {
   constructor(props) {
     super(props)
-      this.state = {
-        users: usersData,
-        search: "",
-        open: false,
-        temporalUser: ''
-      }
+    this.state = {
+      users: usersData,
+      search: "",
+      open: false,
+      temporalUser: ''
+    }
 
-      this.handleOpen = this.handleOpen.bind(this);
-      this.handleClose = this.handleClose.bind(this);
+    this.handleOpen = this.handleOpen.bind(this);
+    this.handleClose = this.handleClose.bind(this);
   }
 
   handleOpen(oneUser) {
@@ -67,27 +77,41 @@ export default class Home extends Component {
     return(
       <div>
         <AddUser addUser={this.addUserHandler}/>
-        <section>
-          <label>Search</label>
-            <input
-              className="input"
-              type="text"
-              placeholder="Search by name, email, role ..."
-              value={this.state.search}
-              onChange={this.updateSearch.bind(this)}
-            />
-        </section>
-        <table className="highlight">
-          <thead>
-              <tr>
-                <th>Picture</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Role</th>
-                <th>Edit</th>
-              </tr>
-          </thead>
-          {filteredUsers.map((oneUser, index)=>{
+        <label>Search</label>
+          <input
+            className="input"
+            type="text"
+            placeholder="Search by name, email, role ..."
+            value={this.state.search}
+            onChange={this.updateSearch.bind(this)}
+          />
+        <Paper className="paper">
+          <Table className="table-head">
+            <TableHead>
+              <TableRow>
+                <TableCell>Image</TableCell>
+                <TableCell>Name</TableCell>
+                <TableCell>Email</TableCell>
+                <TableCell>Role</TableCell>
+                <TableCell>Edit</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {filteredUsers.map((oneUser, index) => (
+              <TableRow key={oneUser._id}>
+                  <TableCell align="right"><img src={oneUser.picture} alt="avatar"/></TableCell>
+                  <TableCell align="right">{oneUser.name}</TableCell>
+                  <TableCell align="right">{oneUser.email}</TableCell>
+                  <TableCell align="right">{oneUser.role}</TableCell>
+                  <TableCell align="right"><button>EDIT</button></TableCell>
+                </TableRow>
+                ))}
+              </TableBody>
+          </Table>
+        </Paper>
+
+            <table>
+            {filteredUsers.map((oneUser, index)=>{
             return <tbody key={oneUser._id}>
                       <tr>
                         <td><img src={oneUser.picture} alt={'avatar'}/></td>
