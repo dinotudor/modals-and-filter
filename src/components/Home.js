@@ -5,9 +5,10 @@ import AddUser from './AddUser'
 import Modal from '@material-ui/core/Modal'
 
 const style = {
-  background: 'pink',
+  background: 'white',
   margin: '40px',
-  border: '5px solid pink'
+  padding: '40px',
+  color: 'white',
 };
 
 export default class Home extends Component {
