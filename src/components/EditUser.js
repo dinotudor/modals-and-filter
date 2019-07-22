@@ -15,17 +15,17 @@ class EditUser extends Component {
 
   componentDidMount() {
     const { _id, picture, name, email, phone, role} = this.props.userToEdit;
-    this.setState({ _id, picture, name, email, phone, role });
+    this.setState({ _id, picture, name, email, phone, role })
   }
 
   closeModal = () => {
     const { _id, picture, name, email, phone, role} = this.props.userToEdit;
     this.setState({  _id, picture, name, email, phone, role })
-    this.props.closeModal();
+    this.props.closeModal()
  }
 
  resetForm = (event) => {
-  event.preventDefault();
+  event.preventDefault()
   this.setState({  name:'', email:'', phone:''})
 }
 

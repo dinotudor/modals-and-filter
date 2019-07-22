@@ -19,6 +19,7 @@ Basic operations: Display all users in a list, Add new user, Edit user (opening 
 In the project directory, you can run:
 
 #### `npm start`
+### `npm run scss`
 #### `npm test`
 #### `npm run build`
 #### `npm run eject`

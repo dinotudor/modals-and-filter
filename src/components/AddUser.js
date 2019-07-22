@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Paper from '@material-ui/core/Paper';
+import Paper from '@material-ui/core/Paper'
 
 class AddUser extends Component {
   constructor(props){
@@ -21,8 +21,8 @@ class AddUser extends Component {
   }
 
   handleFormSubmit = (event) => {
-    event.preventDefault();
-    this.props.addUser(this.state);
+    event.preventDefault()
+    this.props.addUser(this.state)
     this.setState({ name: '', email: '', phone: '' })
   }
 
