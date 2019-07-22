@@ -10,6 +10,8 @@ const style = {
   margin: '40px',
   padding: '40px',
   color: 'white',
+  heigth: '250px',
+
 };
 
 export default class Home extends Component {

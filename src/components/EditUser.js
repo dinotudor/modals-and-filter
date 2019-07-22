@@ -47,9 +47,10 @@ class EditUser extends Component {
 
 
     return (
-      <section className="edit-user">
+      <section className="add-parent">
         <button className="btn-blue" onClick={this.closeModal}><i class="material-icons">close</i></button>
-        <form onSubmit={this.handleFormSubmit}>
+        <button className="btn-blue" onClick={this.resetForm}>Reset fields</button>
+        <form className="add-parent"onSubmit={this.handleFormSubmit}>
           <div>
             <label>Name</label>
             <input type="text" name="name" placeholder={this.state.name} onChange={this.handleChange} value={this.state.name} required />
@@ -62,8 +63,7 @@ class EditUser extends Component {
             <label>Phone</label>
             <input type="text" name="phone" placeholder={this.state.phone} onChange={this.handleChange} value={this.state.phone}  />
           </div>
-          <button className="btn-blue" onClick={this.resetForm}>RESET FORM</button>
-          <button className="btn-blue" type="submit" >SUBMIT</button>
+          <button className="btn-blue" type="submit" >Confirm</button>
         </form>
     </section>
   )
