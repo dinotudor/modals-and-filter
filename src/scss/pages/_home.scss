@@ -12,6 +12,17 @@ body {
  .search-input{
    width: 30%
  }
- table {
-   padding: 20px;
+
+ thead{
+   background: grey;
+   color: #eee;
+   font-size: 1.1rem;
+   th {
+     padding: 15px;
+   }
+   td {
+     align-items: center;
+     justify-content: center;
+     justify-items: center;
+   }
  }

@@ -94,7 +94,7 @@ export default class Home extends Component {
                 </tr>
             </thead>
             {filteredUsers.map((oneUser, index)=>{
-              return <tbody key={oneUser._id}>
+              return <tbody className="tbody" key={oneUser._id}>
                         <tr>
                           <td><img src={oneUser.picture} alt={'avatar'}/></td>
                           <td> {oneUser.name} </td>

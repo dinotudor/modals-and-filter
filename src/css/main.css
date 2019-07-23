@@ -1,6 +1,5 @@
 body {
-  background: blue;
-}
+  background: blue; }
 
 h2, p {
   padding: 10px;
@@ -13,8 +12,16 @@ h2, p {
 .search-input {
   width: 30%; }
 
-table {
-  padding: 20px; }
+thead {
+  background: grey;
+  color: #eee;
+  font-size: 1.1rem; }
+  thead th {
+    padding: 15px; }
+  thead td {
+    align-items: center;
+    justify-content: center;
+    justify-items: center; }
 
 .btn-blue {
   border-radius: 10px;
