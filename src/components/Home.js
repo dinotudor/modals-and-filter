@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import usersData from './../assets/users.json'
-import EditUser from './EditUser'
-import AddUser from './AddUser'
-import Modal from '@material-ui/core/Modal'
+import React, { Component } from 'react';
+import usersData from './../assets/users.json';
+import EditUser from './EditUser';
+import AddUser from './AddUser';
+import Modal from '@material-ui/core/Modal';
 import Paper from '@material-ui/core/Paper';
 
 const style = {
